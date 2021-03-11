@@ -1,0 +1,109 @@
+<div id="all">
+
+    <div id="nav">
+
+        <div id="TextWraper">
+
+            <h2 id="title">Blogs</h2>
+
+        </div>
+        <div id="SearchWraper">
+
+            <input type="text" class="form-control" placeholder="Search......" #t />
+        </div>
+        <div id="ButtonWraper">
+            <input type="button" style="float: right; margin-top: 15px;" class="btn btn-primary" (click)='router.navigateByUrl("createBlog")' value="Write A post" />
+
+        </div>
+
+        <div id="Home">
+            <input type="button" style=" margin-top: 15px;" class="btn btn-primary " (click)='router.navigateByUrl("home")' value="Home Page" />
+        </div>
+        <div id="photoWraper"><img id="logo" width="45" height="45" src="{{user.image}}" /></div>
+    </div>
+
+    <div id="Main">
+        <div id="blogSection">
+
+            <div class="fBlog" *ngFor="let item of blogs;let i=index;">
+                <div class="blogHeader">
+                    <img style="margin: 10px;" width="120px" height="120px" src="{{item.image}}" />
+                </div>
+                <div class="blogBody">
+                    <h4 class="Blogtitle">{{item.title}}</h4>
+                    <p class="Blogcontent">{{item.body}}</p>
+                    <p class="Blogcontent">Created At : {{item.createdAt}}</p>
+                    <img width="35px" height="35px"
+                        src="/assets/heart.png" style="margin:15px;cursor: pointer;" (click)="heart(item)"
+                        *ngIf="!item.love" />
+
+                        <img width="35px" height="35px"
+                        src="/assets/alb.png" style="margin:15px;cursor: pointer;" (click)="alb(item)"
+                        *ngIf="item.love"
+                        />    
+
+                    <img width="35px" style="margin:15px; cursor: pointer;" height="35px" src="/assets/comm.jpg"
+                        (click)="flag[i]=!flag[i]" />
+
+                    <br />
+                    <div style="display: flex; margin-bottom: 10px;" *ngIf="flag[i]">
+                        <input type="text" style="flex: 8;" class="form-control" placeholder="Add your comment..." #c />
+                        <input type="button" style="flex: 1; margin-left: 15px;" value="Add Comment"
+                            class="btn btn-primary" (click)="addComment(c,item._id)" />
+                    </div>
+
+                    <a style="margin-top: 20px; cursor: pointer;" (click)='seeComments(item._id,i)'>See All Comment</a>
+                    <div *ngIf="flag2[i]">
+                        <div style="margin-top: 20px;" *ngFor="let it of commingComments;let j=index ">
+                            <div *ngIf="item._id==it.blogId">
+                                <div class="commentContainer">
+                                    <div id="imgdiv">
+                                        <img src="{{commingUsers[j].image}}" style="margin: 20px;" width="50px;"
+                                            height="50px;" />
+                                    </div>
+                                    <div id="bodydiv">
+                                        <h4 style="font-weight: bold;">{{commingUsers[j].username}}</h4>
+                                        <p>{{it.body}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="secondSection">
+
+            <div id="first" style="margin-top: 80px;">
+
+                <div>
+                    <div style="text-align: center;"> <span
+                            style="font-weight: bold;font-size: 17px; margin: 30px;">{{user.username}}</span></div>
+                    <div style="text-align: center;"> <img style="margin-left: 10px;" id="logo" width="120" height="120"
+                            src={{user.image}} #t22 /></div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <div style="text-align: center; margin-top: 30px;" *ngIf="user.flage=='following'"><button
+                    style="padding: 10px;" class="btn btn-danger btn-block" (click)='unfollow()'>Un Follow</button>
+            </div>
+            <div style="text-align: center; margin-top: 30px;" *ngIf="user.flage=='follow'"><button
+                    style="padding: 10px;" class="btn btn-primary btn-block" (click)='follow()'>Follow</button></div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+</div>

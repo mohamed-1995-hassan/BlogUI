@@ -1,0 +1,65 @@
+
+div{
+    border-radius: 10px;
+}
+#div1{
+
+width: 60%;
+height: 600px;
+margin: 50px auto;
+border: 2px solid  #bdbdbd;
+text-align: center;
+
+}
+
+#div2{
+
+
+    height: 100%;
+  
+
+}
+#div3{
+
+    height: 100%;
+    text-align: center;
+    display: block;    
+    background-color:  #bdbdbd;
+}
+img{
+
+    margin-top: 50px;
+   
+}
+
+h1{
+    color: #fff;
+}
+
+#div5{
+    padding: 30px;
+}
+
+input{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.btn1{
+    margin-top: 40px;
+    padding: 10px;
+    color: #fff;
+    background-color: #bdbdbd ;
+}
+h4{
+    margin-top: 40px;
+    color: #fff;
+}
+
+span{
+    color: red;
+}
+
+
+
+

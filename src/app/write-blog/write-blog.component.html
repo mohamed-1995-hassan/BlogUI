@@ -1,0 +1,32 @@
+<input id='fileI' type="file" name="file"  style="display: none;" (change)='change($event,t2)' #t/>
+
+<div id="all">
+    <div id="container">
+        <h4>Enter your title : </h4>
+        <input id="txtTitle" type="text" [(ngModel)]='blog.title' class="form-control" placeholder="Type A Text" />
+
+        <div id="secondSection">
+            <div id="part1">
+                <div id="imageContainer">
+                    <h4>click to upload : </h4>
+                    <img width="150px" height="150px;" style="cursor: pointer;" (click)='done(t)' src="/assets/upload.png" #t2 />
+                </div>
+            </div>
+            <div id="part2">
+                <h4>Enter your Content here : </h4>
+                <textarea class="form-control" [(ngModel)]='blog.body'  id="exampleFormControlTextarea1" rows="8"></textarea>
+            </div>
+
+        </div>
+        <div style="width: 100;">
+
+            <button class="btn btn-primary" (click)='addBlog()' style="float: right;">Add Bost</button>
+
+        </div>
+
+    </div>
+
+
+
+
+</div>

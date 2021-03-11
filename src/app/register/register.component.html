@@ -1,0 +1,57 @@
+<input id='fileI' type="file" name="file"  style="display: none;" (change)='change($event,t2)' #t/>
+
+
+
+
+<div id='div1' class="container" >
+
+    
+    <div id="div2"  class="row">
+      <div id="div3"   class="col-sm-6 " >
+          <h1>User Register form</h1>
+          <h4>click to add photo</h4>
+          <img src="/assets/images/log.png" style="cursor: pointer;"  (click)='done(t)'  height="50%" width="50%" #t2/>
+        </div>
+      <div  class="col-sm-6 ">
+         <div id="div5" >
+           <form #signup="ngForm">
+
+             <input type="text" class="form-control" [(ngModel)]='user.firstname'
+            name="firstname" required #firstname="ngModel" minlength="4"
+            placeholder="Enter first name" />
+            <span *ngIf="firstname.touched && firstname.errors?.required">first name is required</span>
+            <span *ngIf="firstname.errors?.minlength">min length {{firstname.errors?.minlength.requiredLength}}</span>
+
+
+
+
+
+
+            
+            <input type="text" class="form-control" [(ngModel)]='user.username'
+            name="username" required #username="ngModel" minlength="4"
+            placeholder="Enter User Name" />
+            <span *ngIf="username.touched && username.errors?.required">id is required</span>
+            <span *ngIf="username.errors?.minlength">min length {{username.errors?.minlength.requiredLength}}</span>
+
+
+            
+            <input type="password" class="form-control" [(ngModel)]='user.password'
+            name="password" required maxlength="10" minlength="5" #password="ngModel"
+            placeholder="Enter Your password" />
+            <span *ngIf="password.touched&&password.errors?.required">password is required</span>
+            <span *ngIf="password.errors?.minlength">min length {{password.errors?.minlength.requiredLength}}</span>
+
+
+          </form>
+
+            <a  class=" btn1 btn btn-block" (click)='addOne()' >Register</a>
+            
+         </div>
+
+         <button routerLink="/login" style="float:right;" class=" btn1 btn">Login now</button>  
+      </div>
+    </div>
+    
+</div>
+

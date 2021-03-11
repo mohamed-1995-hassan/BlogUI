@@ -1,0 +1,71 @@
+<div id="nav">
+    <div id="TextWraper">
+        <h2 id="title">Blogs</h2>
+    </div>
+    <div id="SearchWraper">
+        <input type="text" class="form-control" placeholder="Search......" />
+    </div>
+    <div id="ButtonWraper">
+        <button type="button"  style="float: right; margin-top: 15px;" class="btn btn-primary" (click)='createBlog()' >Write A post</button>
+    </div>
+        <div id="my_profile" >
+            <input type="button" (click)='open_profile()'  style=" margin-top: 15px;" class="btn btn-primary " value="My Profile" />
+        </div>
+    <div id="photoWraper"><img id="logo" width="45" height="45" src="{{user.image}}" /></div>
+</div>
+
+
+
+<br><br><br>
+
+<h5 style="text-align: center;">Latest from Community</h5>
+<div class="blogFollowing" id="cont">
+    <div class="blogList">
+        <div class="BFcontainer" *ngFor="let item of blogs;let i=index">
+            
+            <div class="fBlog">
+                <div class="blogHeader">
+                    <img width="100px" height="100px" src="{{item.image}}"  />
+                </div>
+                <div class="blogBody">
+                   <h4 class="Blogtitle" style="text-align: center;margin: 5px;">{{item.title}}</h4>
+                    <p class="Blogcontent" style="margin-top: 20px;">{{item.body}}</p>
+                    
+                    <p class="Blogcontent" style="margin-top: 20px;">Created At : {{item.createdAt}}</p>
+                </div>
+               
+            </div> 
+           
+            
+        </div>
+    </div>
+  
+
+    <div class="follwerList">
+        <p>active users</p>
+        <div class="followerbody">
+            
+            <div class="followcell" style="cursor: pointer;" (click)='openFollowing($event,item)' *ngFor="let item of users">
+                <div class="f">
+                    <img id="logo" width="45" height="45" src={{item.image}} />
+                </div>
+                <div class="f">
+                    <p id="p1">{{item.username}}</p>
+                </div>
+                <div class="f">
+                     <button class="btn btn-primary" *ngIf="item.flage=='follow'"  style="margin-top: 20px;" (click)='followuser($event,item)'>Follow</button> 
+                     <p id="flg1" *ngIf="item.flage=='my account'">My Account</p> 
+                    <p id="flg2" *ngIf="item.flage=='following'">Following...</p>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

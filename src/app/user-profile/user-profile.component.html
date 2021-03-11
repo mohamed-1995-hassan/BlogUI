@@ -1,0 +1,122 @@
+<input id='fileI' type="file" name="file" style="display: none;" (change)='change($event,t2)' #t />
+<div id="all">
+
+    <div id="nav">
+
+        <div id="TextWraper">
+
+            <h2 id="title">Blogs</h2>
+
+        </div>
+        <div id="SearchWraper">
+
+            <input type="text" class="form-control" placeholder="Search......"  (keyup)='search($event)' />
+
+        </div>
+        <div id="ButtonWraper">
+            <input type="button" style="float: right; margin-top: 15px;" class="btn btn-primary" (click)='router.navigateByUrl("createBlog")' value="Write A post" />
+
+        </div>
+
+        <div id="Home">
+            <input type="button" style=" margin-top: 15px;" class="btn btn-primary " value="Home Page"
+                (click)='home()' />
+        </div>
+        <div id="photoWraper"><img id="logo" width="45" height="45" src={{user.image}} #t33 /></div>
+    </div>
+
+    <div id="Main">
+        <div id="blogSection">
+
+            <div class="fBlog" *ngFor="let item of blogs">
+                <div class="blogHeader">
+                    <img style="margin: 10px;" width="120px" height="120px" src="{{item.image}}" />
+                </div>
+                <div class="blogBody">
+                    <h4 class="Blogtitle">{{item.title}}</h4>
+                    <p class="Blogcontent">{{item.body}}</p>
+                    <p class="Blogcontent">Created At : {{item.createdAt}}</p>
+                    <img width="35px" style="margin:15px; cursor: pointer;" height="35px" src="/assets/delete.png"
+                        (click)="delete(item._id)" />
+                    <img width="35px" style="margin:15px; cursor: pointer;" height="35px" src="/assets/edite.jfif"
+                        (click)="edite(m,item,r,r1)" />
+
+                    <br />
+                    <div style="display: flex; margin-bottom: 10px;" *ngIf="flag">
+                        <input type="text" style="flex: 8;" class="form-control" placeholder="Add your comment..." />
+                        <input type="button" style="flex: 1; margin-left: 15px;" value="Add Comment"
+                            class="btn btn-primary" />
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div id="secondSection">
+
+            <div id="first">
+
+                <div>
+                    <div style="text-align: center;"> <span
+                            style="font-weight: bold;font-size: 17px; margin: 30px;">{{user.username}}</span></div>
+                    <div style="text-align: center;"> <img style="margin-left: 10px;" id="logo" width="120" height="120"
+                            src={{user.image}} #t22 /></div>
+
+
+                </div>
+            </div>
+            <div id="second">
+                <h3>Click to change photo</h3>
+                <img width="130px" height="130px"  src="/assets/change.jpg" style="border: 2px solid black;cursor: pointer;"
+                    (click)='done(t)' #t2 />
+                <div style="background-color: blue;"><button style="margin-top: 10px;float: right;" class="btn btn-primary"
+                        (click)='Save(t22,t2,t33)'>save</button></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="myModal" class="modal" #m>
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header" style="background-color:#bdbdbd ;">
+            <span class="close" (click)='close(m)'>&times;</span>
+            <h2>Modal Header</h2>
+        </div>
+        <div class="modal-body" style="height: 200px;width: 150;">
+            <h4 style="margin-left: 10px;">enter your title</h4>
+            <input style="margin: 10px;" class="form-control" type="text" #r />
+            <h4 style="margin-left: 10px;">enter your body</h4>
+            <input style="margin: 10px;" class="form-control" type="text" #r1 />
+        </div>
+        <div class="modal-footer" style="height: 60px; background-color:#bdbdbd ;">
+            <button class="btn btn-primary" style="margin-top: 15px;" (click)="saveEdite(r,r1,m)">click</button>
+        </div>
+    </div>
+
+</div>

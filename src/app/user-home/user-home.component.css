@@ -1,0 +1,163 @@
+#nav {
+  width: 100%;
+  height: 60px;
+  background-color: #ede7f6;
+  display: flex;
+}
+
+#TextWraper {
+  height: 100%;
+  flex: 1;
+}
+
+#SearchWraper {
+  height: 100%;
+  flex: 2;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#ButtonWraper {
+  height: 100%;
+  flex: 1;
+}
+
+#my_profile {
+  height: 100%;
+  flex: 2;
+  text-align: center;
+}
+
+#photoWraper {
+  height: 100%;
+  flex: 1;
+  text-align: center;
+}
+
+#title {
+  font-family: myFirstFont;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.follwing {
+  color: #616161;
+}
+
+.blogFollowing {
+  display: flex;
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+  flex: 2;
+}
+
+.followNum {
+  flex: 1;
+}
+
+.BFcontainer {
+  height: 280px;
+  width: 100%;
+}
+
+.fBlog {
+  width: 500px;
+  height: 100%;
+  margin: 12px;
+}
+
+.blogHeader {
+  width: 470px;
+  height: 120px;
+  background-color: #ede7f6;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+.blogBody {
+  width: 470px;
+  height: 300px;
+  border: 2px solid #ede7f6;
+  padding: 15px;
+  border-radius: 15px;
+}
+.Blogtitle {
+  text-align: left;
+  font-weight: bold;
+}
+.Blogcontent {
+  text-align: left;
+}
+
+#cont {
+  display: flex;
+}
+
+.blogList {
+  flex: 2;
+  display: flex;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+.blogList::-webkit-scrollbar {
+  display: none;
+}
+
+.follwerList {
+  flex: 1;
+}
+
+.followerbody {
+  margin: auto;
+  width: 85%;
+  height: 600px;
+  border: 2px solid black;
+  border-radius: 15px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+.followerbody::-webkit-scrollbar {
+    display: none;
+  }
+
+.followcell {
+  margin: auto;
+  width: 95%;
+  height: 80px;
+  margin: 10px;
+  background-color: #f5f5f5;
+  display: flex;
+  border-radius: 10px;
+}
+
+#p1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px;
+}
+.f {
+  flex: 1;
+}
+
+#flg1 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 20px;
+  color: green;
+}
+
+#flg2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 20px;
+  color: #616161;
+}
